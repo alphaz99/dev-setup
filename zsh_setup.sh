@@ -1,3 +1,6 @@
+# Start the Zsh shell
+zsh
+
 # Clone the prezto repo
 git clone --recursive https://github.com/alphaz99/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
