@@ -1,2 +1,3 @@
 # dev-setup
-Custom 
+
+To install prezto for zsh, run .zsh_setup.sh
