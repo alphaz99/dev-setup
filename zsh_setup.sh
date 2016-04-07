@@ -2,6 +2,7 @@
 git clone --recursive https://github.com/alphaz99/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 # Remove previous zsh configuration
+if [ -e ~/.zshrc ]; then mv ~/.zshrc ~/.zshrc_bak; fi
 rm ~/.zshrc
 
 # Install prezto
