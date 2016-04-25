@@ -7,6 +7,21 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 # Clone vim config
 git clone https://github.com/alphaz99/vim.git ~/.vim/config
+read -p "Do you want to use neocomplete (default is YouCompleteMe)? " yn
+case $yn in
+    [Yy]* )
+        # Install fonts
+        pushd
+        cd ~/.vim/config
+        git checkout neocomplete
+        popd
+        echo "Using neocomplete"
+        echo "You will have to compile vimproc manually. Do this by running make
+              in the vimproc.vim directory. This will be in ~/.vim/bundle/vimproc.vim"
+        break;;
+    [Nn]* )
+        ;;
+esac
 ln -s $HOME/.vim/config/.vimrc $HOME/.vimrc
 
 # Install plugins
