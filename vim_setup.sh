@@ -1,5 +1,5 @@
 # Backup vimrc
-if [ -e .vimrc ]; then mv ~/.vimrc ~/.vimrc_bak; fi
+if [ -e ~/.vimrc ] || [ -L ~/.vimrc ]; then mv ~/.vimrc ~/.vimrc_bak; fi
 if [ -e .vim ]; then mv ~/.vim ~/.vim_bak; fi
 
 # Clone vundle plugin
