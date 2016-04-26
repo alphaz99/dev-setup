@@ -29,6 +29,8 @@ case $yn in
         ;;
 esac
 ln -s $HOME/.vim/config/.vimrc $HOME/.vimrc
+mkdir ~/.vim/ftplugin
+ln -s $HOME/.vim/config/haskell.vim $HOME/.vim/ftplugin/haskell.vim
 
 # Install plugins
 vim +PluginInstall +qall
