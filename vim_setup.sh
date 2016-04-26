@@ -24,7 +24,7 @@ case $yn in
         echo "ghc"
         echo "cabal-install"
         echo "ghc-mod"
-        break;;
+        ;;
     [Nn]* )
         ;;
 esac
