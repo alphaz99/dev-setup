@@ -23,7 +23,7 @@ in the vimproc.vim directory. This will be in ~/.vim/bundle/vimproc.vim"
         echo "For Haskell support, please install:
             ghc
             cabal-install
-            ghc-mod
+            ghc-mod"
         break;;
     [Nn]* )
         ;;
