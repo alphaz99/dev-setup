@@ -13,17 +13,16 @@ read -p "Do you want to use neocomplete (default is YouCompleteMe)? " yn
 case $yn in
     [Yy]* )
         # Install fonts
-        pushd
-        cd ~/.vim/config
+        pushd $HOME/.vim/config
         git checkout neocomplete
         popd
         echo "Using neocomplete"
         echo "You will have to compile vimproc manually. Do this by running make"
         echo "in the vimproc.vim directory. This will be in ~/.vim/bundle/vimproc.vim"
-        echo "For Haskell support, please install:"
-        echo "ghc"
-        echo "cabal-install"
-        echo "ghc-mod"
+        echo "For Haskell support, please install:
+            ghc
+            cabal-install
+            ghc-mod"
         ;;
     [Nn]* )
         ;;
