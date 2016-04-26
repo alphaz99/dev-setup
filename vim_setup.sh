@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Backup vimrc
 if [ -e ~/.vimrc ] || [ -L ~/.vimrc ]; then mv ~/.vimrc ~/.vimrc_bak; fi
 if [ -e .vim ]; then mv ~/.vim ~/.vim_bak; fi
@@ -17,7 +19,11 @@ case $yn in
         popd
         echo "Using neocomplete"
         echo "You will have to compile vimproc manually. Do this by running make
-              in the vimproc.vim directory. This will be in ~/.vim/bundle/vimproc.vim"
+in the vimproc.vim directory. This will be in ~/.vim/bundle/vimproc.vim"
+        echo "For Haskell support, please install:
+            ghc
+            cabal-install
+            ghc-mod
         break;;
     [Nn]* )
         ;;
@@ -26,4 +32,5 @@ ln -s $HOME/.vim/config/.vimrc $HOME/.vimrc
 
 # Install plugins
 vim +PluginInstall +qall
-
+echo "Vim configuration installed"
+echo "Please install exuberant ctags"
