@@ -34,4 +34,4 @@ ln -s $HOME/.vim/config/haskell.vim $HOME/.vim/ftplugin/haskell.vim
 # Install plugins
 vim +PluginInstall +qall
 echo "Vim configuration installed"
-echo "Please install exuberant ctags"
+command -v ctags >/dev/null 2>&1 || { echo >&2 "Please install ctags"; }
