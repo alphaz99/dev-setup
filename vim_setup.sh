@@ -18,12 +18,12 @@ case $yn in
         git checkout neocomplete
         popd
         echo "Using neocomplete"
-        echo "You will have to compile vimproc manually. Do this by running make
-in the vimproc.vim directory. This will be in ~/.vim/bundle/vimproc.vim"
-        echo "For Haskell support, please install:
-            ghc
-            cabal-install
-            ghc-mod"
+        echo "You will have to compile vimproc manually. Do this by running make"
+        echo "in the vimproc.vim directory. This will be in ~/.vim/bundle/vimproc.vim"
+        echo "For Haskell support, please install:"
+        echo "ghc"
+        echo "cabal-install"
+        echo "ghc-mod"
         break;;
     [Nn]* )
         ;;
