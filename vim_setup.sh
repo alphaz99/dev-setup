@@ -4,8 +4,9 @@
 if [ -e ~/.vimrc ] || [ -L ~/.vimrc ]; then mv ~/.vimrc ~/.vimrc_bak; fi
 if [ -e .vim ]; then mv ~/.vim ~/.vim_bak; fi
 
-# Clone vundle plugin
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+# Clone dein plugin
+mkdir -p ~/.vim/dein/repos/github.com/Shougo/dein.vim
+git clone https://github.com/Shougo/dein.vim.git ~/.vim/dein/repos/github.com/Shougo/dein.vim
 
 # Clone vim config
 git clone https://github.com/alphaz99/vim.git ~/.vim/config
@@ -31,7 +32,24 @@ ln -s $HOME/.vim/config/.vimrc $HOME/.vimrc
 mkdir ~/.vim/ftplugin
 ln -s $HOME/.vim/config/haskell.vim $HOME/.vim/ftplugin/haskell.vim
 
+read -p "Use neovim? " yn
+case $yn in
+    [Yy]* )
+        mkdir ~/.config
+        ln -s ~/.vim ~/.config/nvim
+        ln -s ~/.vim/config/.vimrc ~/.config/nvim/init.vim
+        pushd $HOME/.vim/config
+        git checkout neovim
+        popd
+        echo "Neovim set up"
+        echo "You will have to install neovim manually"
+        ;;
+    [Nn]* )
+        ;;
+esac
+
 # Install plugins
-vim +PluginInstall +qall
+vim +"call dein#install()" +qall
 echo "Vim configuration installed"
 command -v ctags >/dev/null 2>&1 || { echo >&2 "Please install ctags"; }
+
