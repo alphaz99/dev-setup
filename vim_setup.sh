@@ -10,24 +10,7 @@ git clone https://github.com/Shougo/dein.vim.git ~/.vim/dein/repos/github.com/Sh
 
 # Clone vim config
 git clone https://github.com/alphaz99/vim.git ~/.vim/config
-read -p "Do you want to use neocomplete (default is YouCompleteMe)? " yn
-case $yn in
-    [Yy]* )
-        # Install fonts
-        pushd $HOME/.vim/config
-        git checkout neocomplete
-        popd
-        echo "Using neocomplete"
-        echo "You will have to compile vimproc manually. Do this by running make"
-        echo "in the vimproc.vim directory. This will be in ~/.vim/bundle/vimproc.vim"
-        echo "For Haskell support, please install:
-            ghc
-            cabal-install
-            ghc-mod"
-        ;;
-    [Nn]* )
-        ;;
-esac
+
 ln -s $HOME/.vim/config/.vimrc $HOME/.vimrc
 mkdir ~/.vim/ftplugin
 ln -s $HOME/.vim/config/haskell.vim $HOME/.vim/ftplugin/haskell.vim
@@ -41,15 +24,34 @@ case $yn in
         pushd $HOME/.vim/config
         git checkout neovim
         popd
+
+        # Install plugins
+        vim +"call dein#install()" +qall
+        echo "Vim configuration installed"
         echo "Neovim set up"
         echo "You will have to install neovim manually"
         ;;
     [Nn]* )
+        read -p "Do you want to use neocomplete (default is YouCompleteMe)? " yn
+        case $yn in
+            [Yy]* )
+                # Install fonts
+                pushd $HOME/.vim/config
+                git checkout neocomplete
+                popd
+                echo "Using neocomplete"
+                echo "You will have to compile vimproc manually. Do this by running make"
+                echo "in the vimproc.vim directory. This will be in ~/.vim/bundle/vimproc.vim"
+                echo "For Haskell support, please install:
+                    ghc
+                    cabal-install
+                    ghc-mod"
+                ;;
+            [Nn]* )
+                ;;
+        esac
         ;;
 esac
 
-# Install plugins
-vim +"call dein#install()" +qall
-echo "Vim configuration installed"
-command -v ctags >/dev/null 2>&1 || { echo >&2 "Please install ctags"; }
 
+command -v ctags >/dev/null 2>&1 || { echo >&2 "Please install ctags"; }
