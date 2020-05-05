@@ -1,14 +1,25 @@
 # Check if zsh is installed
 command -v zsh >/dev/null 2>&1 || { echo >&2 "I require zsh but it's not installed.  Aborting."; exit 1; }
 
-# Clone the prezto repo
-git clone --recursive https://github.com/alphaz99/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+# Install zinit
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 
 # Remove previous zsh configuration
 if [ -e ~/.zshrc ] || [ -L ~/.zshrc ]; then mv ~/.zshrc ~/.zshrc_bak; fi
+if [ -e ~/.zshenv ] || [ -L ~/.zshenv ]; then mv ~/.zshenv ~/.zshenv_bak; fi
 
-# Install prezto
-zsh install_prezto.sh
+# Symlink new zsh configuration
+mkdir -p $HOME/.zsh
+ln -s $(pwd)/.zshrc ~/.zsh/.zshrc
+ln -s $(pwd)/.zshenv_home ~/.zshenv
+ln -s $(pwd)/.zshenv ~/.zsh/.zshenv
+
+
+# Remove previous zsh configuration
+if [ -e ~/.p10k.zsh ] || [ -L ~/.p10k.zsh ]; then mv ~/.p10k.zsh ~/.p10k.zsh; fi
+
+# Symlink powerlevel10k configuration
+ln -s $(pwd)/.p10k.zsh ~/.zsh/.p10k.zsh
 
 # Install powerline fonts
 read -p "Do you want to install powerline fonts?[yYnN] " yn

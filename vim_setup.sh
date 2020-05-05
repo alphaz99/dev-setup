@@ -26,7 +26,7 @@ case $yn in
         popd
 
         # Install plugins
-        vim +"call dein#install()" +qall
+        nvim +"call dein#install()" +qall
         echo "Vim configuration installed"
         echo "Neovim set up"
         echo "You will have to install neovim manually"
