@@ -20,6 +20,9 @@ fi
 # Variable and option settings
 export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
+# Path
+export PATH="$HOME/bin:$HOME/erlang_ls/_build/default/bin/:/usr/local/bin:$HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
 # Private sources
 [ -f ~/.zsh/.zprivate.zsh ] && source ~/.zsh/.zprivate.zsh
 
