@@ -8,9 +8,10 @@ if [ -e .vim ]; then mv ~/.vim ~/.vim_bak; fi
 git clone https://github.com/alphaz99/vim.git ~/.vim
 
 # Clone dein plugin
-mkdir -p ~/.vim/dein/repos/github.com/Shougo/dein.vim
-git clone https://github.com/Shougo/dein.vim.git ~/.vim/dein/repos/github.com/Shougo/dein.vim
-
+mkdir -p ~/.vim/dein/
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+sh ./installer.sh ~/.vim/dein
+rm ./installer.sh
 
 # Link vimrc in config to $HOME
 ln -s $HOME/.vim/config/.vimrc $HOME/.vimrc
