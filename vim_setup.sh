@@ -34,5 +34,5 @@ popd
 nvim +"call dein#install()" +qall
 echo "Vim configuration installed"
 echo "Neovim set up"
-;;
+
 command -v ctags >/dev/null 2>&1 || { echo >&2 "Please install ctags"; }
