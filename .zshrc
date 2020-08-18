@@ -20,9 +20,24 @@ export PATH="$HOME/bin:$HOME/erlang_ls/_build/default/bin/:/usr/local/bin:$HOME/
 
 # Source fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='fd --type f --color=never'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND='fd --type d . --color=never'
+
+# Source iTerm2 shell integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Variable and option settings
 export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+export BAT_STYLE="numbers,changes,grid"
+export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
+
+# NPM
+NPM_PACKAGES="~/.npm-packages"
+PATH="$NPM_PACKAGES/bin:$PATH"
+# Unset manpath
+unset MANPATH
+export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 # Private sources
 [ -f ~/.zsh/.zprivate.zsh ] && source ~/.zsh/.zprivate.zsh
