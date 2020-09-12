@@ -7,12 +7,12 @@
 # For a full list of active aliases, run `alias`.
 # Aliases
 alias ls='ls -GFh'
+alias t="tmux"
 
 # User specific aliases and functions for all shells
 
-if [ "$TERM_PROGRAM" != "nuclide" ] && [ "$TERM" != "nuclide" ] && [ -t 0 ] && [ -z "$TMUX" ]; then
-  #tmux list-clients -t auto -F '#{client_pid}' | xargs kill -9   # in emergency
-  tmux -2CC new-session -s auto -A
+if [[ ! $TMUX && -t 0 && $TERM_PROGRAM != vscode ]]; then
+  tmux $TMUX_OPTIONS new-session -As auto
 fi
 
 # Path

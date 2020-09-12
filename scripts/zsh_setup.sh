@@ -10,16 +10,16 @@ if [ -e ~/.zshenv ] || [ -L ~/.zshenv ]; then mv ~/.zshenv ~/.zshenv_bak; fi
 
 # Symlink new zsh configuration
 mkdir -p $HOME/.zsh
-ln -s $(pwd)/.zshrc ~/.zsh/.zshrc
-ln -s $(pwd)/.zshenv_home ~/.zshenv
-ln -s $(pwd)/.zshenv ~/.zsh/.zshenv
+ln -s $(pwd)/zsh/.zshrc ~/.zsh/.zshrc
+ln -s $(pwd)/zsh/.zshenv_home ~/.zshenv
+ln -s $(pwd)/zsh/.zshenv ~/.zsh/.zshenv
 
 
 # Remove previous zsh configuration
 if [ -e ~/.p10k.zsh ] || [ -L ~/.p10k.zsh ]; then mv ~/.p10k.zsh ~/.p10k.zsh; fi
 
 # Symlink powerlevel10k configuration
-ln -s $(pwd)/.p10k.zsh ~/.zsh/.p10k.zsh
+ln -s $(pwd)/../zsh/.p10k.zsh ~/.zsh/.p10k.zsh
 
 # Install powerline fonts
 read -p "Do you want to install powerline fonts?[yYnN] " yn
