@@ -13,6 +13,7 @@ mkdir -p $HOME/.zsh
 ln -s $(pwd)/zsh/.zshrc ~/.zsh/.zshrc
 ln -s $(pwd)/zsh/.zshenv_home ~/.zshenv
 ln -s $(pwd)/zsh/.zshenv ~/.zsh/.zshenv
+ln -s /home/rbachal/Documents/dev-setup/zsh/.inputrc ~/.inputrc
 
 
 # Remove previous powerlevel10k configuration
