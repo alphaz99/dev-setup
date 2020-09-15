@@ -19,7 +19,7 @@ ln -s $(pwd)/zsh/.zshenv ~/.zsh/.zshenv
 if [ -e ~/.p10k.zsh ] || [ -L ~/.p10k.zsh ]; then mv ~/.p10k.zsh ~/.p10k.zsh; fi
 
 # Symlink powerlevel10k configuration
-ln -s $(pwd)/../zsh/.p10k.zsh ~/.zsh/.p10k.zsh
+ln -s $(pwd)/zsh/.p10k.zsh ~/.zsh/.p10k.zsh
 
 # Install powerline fonts
 read -p "Do you want to install powerline fonts?[yYnN] " yn
