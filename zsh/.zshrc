@@ -31,7 +31,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 export BAT_STYLE="numbers,changes,grid"
 export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
-export KEYTIMEOUT=1
 
 # NPM
 NPM_PACKAGES="~/.npm-packages"
@@ -81,7 +80,6 @@ unsetopt hup                    # Don't Kill Jobs On Shell Exit.
 unsetopt check_jobs             # Don't Report On Jobs When Shell Exit.
 
 setopt correct                  # Turn On Corrections
-bindkey -v                      # Use vi-mode
 
 # Completion Options.
 setopt complete_in_word         # Complete From Both Ends Of A Word.

@@ -6,6 +6,7 @@ if [ -e ~/.tmux.conf ] || [ -L ~/.tmux.conf ]; then mv ~/.tmux.conf ~/.tmux.conf
 
 # Symlink new tmux configuration
 ln -s $(pwd)/tmux/.tmux.conf ~/.tmux.conf
+ln -s $(pwd)/tmux/.tmux_airline.conf ~/.tmux_airline.conf
 
 # Install tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
