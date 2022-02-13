@@ -38,6 +38,7 @@ if dein#load_state('~/.vim/dein')
 
     " Tmux {{{3
     call dein#add('christoomey/vim-tmux-navigator')
+    call dein#add('edkolev/tmuxline.vim')
 
     " Internal {{{3
     call dein#add('voldikss/vim-floaterm')
@@ -128,6 +129,7 @@ set completeopt=menuone,menu,longest
 set wildignore+=*\\tmp\\*,*.swp,*.swo,*.zip,.git,.cabal-sandbox
 set wildmode=longest,list,full
 set wildmenu
+set redrawtime=10000
 
 set timeoutlen=500
 
